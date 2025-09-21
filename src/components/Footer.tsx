@@ -64,15 +64,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-4 mt-12 pt-8 border-t border-border/20">
           <div className="flex items-center gap-3">
             <Phone className="text-primary" size={20} />
-            <span className="text-muted-foreground">(210) 555-0123</span>
+            <span className="text-muted-foreground">Coming Soon!</span>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="text-primary" size={20} />
-            <span className="text-muted-foreground">info@nyksoncapital.com</span>
+            <span className="text-muted-foreground">infotexasinvestor.us</span>
           </div>
           <div className="flex items-center gap-3">
             <MapPin className="text-primary" size={20} />
-            <span className="text-muted-foreground">San Antonio, Texas</span>
+            <span className="text-muted-foreground">San Antonio, Texas-USA</span>
           </div>
         </div>
 
