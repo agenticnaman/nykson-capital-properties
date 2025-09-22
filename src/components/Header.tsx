@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import logoImage from "@/assets/nykson-logo.png";
@@ -6,13 +6,33 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Shrink header on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/40 shadow-sm">
+    <motion.header
+      initial={{ y: -60 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-border/40 transition-all duration-500 ${
+        scrolled ? "bg-background/90 shadow-lg h-16" : "bg-background/60 h-20"
+      }`}
+    >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-full">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center space-x-3"
+          >
             <img
               src={logoImage}
               alt="Nykson Capital"
@@ -26,20 +46,23 @@ const Header = () => {
                 Real Estate Investment
               </span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">
             {["Home", "About", "Services", "Testimonials", "Contact"].map(
-              (item) => (
-                <a
+              (item, i) => (
+                <motion.a
                   key={item}
                   href={`#${item.toLowerCase()}`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
                   className="relative text-foreground font-medium transition-colors hover:text-primary group"
                 >
                   {item}
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
+                </motion.a>
               )
             )}
           </nav>
@@ -54,12 +77,14 @@ const Header = () => {
               <Phone size={16} />
               Coming Soon
             </Button>
-            <Button
-              size="lg"
-              className="px-6 py-2 text-sm font-semibold tracking-wide rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:opacity-90 transition"
-            >
-              Get Cash Offer
-            </Button>
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Button
+                size="lg"
+                className="px-6 py-2 text-sm font-semibold tracking-wide rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:shadow-xl transition"
+              >
+                Get Cash Offer
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,11 +100,11 @@ const Header = () => {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: -15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
-              className="md:hidden py-6 border-t border-border/40"
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden py-6 border-t border-border/40 bg-background/95 shadow-lg rounded-b-2xl"
             >
               <nav className="flex flex-col space-y-5 text-lg font-medium">
                 {["Home", "About", "Services", "Testimonials", "Contact"].map(
@@ -96,7 +121,7 @@ const Header = () => {
                 <div className="pt-5 border-t border-border/40">
                   <Button
                     size="lg"
-                    className="w-full rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:opacity-90 transition"
+                    className="w-full rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:shadow-xl transition"
                   >
                     Get Cash Offer
                   </Button>
@@ -106,7 +131,7 @@ const Header = () => {
           )}
         </AnimatePresence>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
