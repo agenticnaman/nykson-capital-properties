@@ -1,57 +1,53 @@
 import { Button } from "@/components/ui/button";
-import { Home, Handshake, FileText, Hammer, ArrowRight } from "lucide-react";
+import { DollarSign, Clock, Home, Shield, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Services = () => {
   const services = [
     {
-      icon: <Home size={42} />,
-      title: "Direct Property Purchases",
-      description:
-        "We buy land and houses below market value for cash, offering sellers speed and certainty.",
+      icon: <DollarSign className="w-12 h-12" />,
+      title: "Cash for Houses - Any Condition",
+      description: "We buy houses in any condition with cash. No repairs, no cleaning, no staging required.",
       features: [
-        "Cash offers within 24 hours",
-        "No repairs needed",
-        "Close in 10-14 days",
-        "No fees or commissions",
-      ],
+        "Instant cash offers within 24 hours",
+        "Buy houses as-is in any condition",
+        "No realtor fees or commissions",
+        "Handle all paperwork and closing costs"
+      ]
     },
     {
-      icon: <Handshake size={42} />,
-      title: "Investor Partnerships",
-      description:
-        "Builders, rehabbers, and fix-and-flippers rely on us to bring them consistent deals that fit their exact criteria.",
+      icon: <Clock className="w-12 h-12" />,
+      title: "Fast Closings - Your Timeline",
+      description: "Close on your schedule. Whether you need to sell in 7 days or 60 days, we work with your timeline.",
       features: [
-        "Curated deal flow",
-        "Pre-vetted properties",
-        "Flexible terms",
-        "Ongoing relationship",
-      ],
+        "Close in as little as 7 days",
+        "Flexible closing dates to fit your needs",
+        "No waiting for bank approvals",
+        "Cash in hand at closing"
+      ]
     },
     {
-      icon: <FileText size={42} />,
-      title: "Deal Structuring & Wholesaling",
-      description:
-        "With our contracts and buyer network, we create seamless assignments that generate value for all parties.",
+      icon: <Home className="w-12 h-12" />,
+      title: "Problem Properties Welcome",
+      description: "Fire damage, water damage, foundation issues, or hoarding situations - we buy them all.",
       features: [
-        "Professional contracts",
-        "Established buyer network",
-        "Quick turnaround",
-        "Transparent process",
-      ],
+        "Fire and water damaged properties",
+        "Inherited properties you don't want",
+        "Properties in foreclosure",
+        "Houses needing major repairs"
+      ]
     },
     {
-      icon: <Hammer size={42} />,
-      title: "Rehab & Flip Support",
-      description:
-        "We connect rehabbers with distressed properties and help them maximize ROI through profitable exits.",
+      icon: <Shield className="w-12 h-12" />,
+      title: "Fair Market Value Offers",
+      description: "Our offers are based on current market conditions and your property's potential value.",
       features: [
-        "Distressed property sourcing",
-        "ROI analysis",
-        "Exit strategy planning",
-        "Market insights",
-      ],
-    },
+        "Professional property evaluations",
+        "Transparent offer calculations",
+        "Local market expertise",
+        "No lowball offers - fair deals only"
+      ]
+    }
   ];
 
   return (
@@ -75,14 +71,14 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-            Comprehensive Real Estate{" "}
+            How We Help{" "}
             <span className="animate-text-gradient bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent">
-              Solutions
+              Homeowners Sell Fast
             </span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Whether you're selling, buying, or investing, we have the expertise
-            and network to make your real estate goals a reality.
+            We specialize in buying houses directly from homeowners. No agents, no repairs, no hassle.
+            Just fast, fair cash offers for your property.
           </p>
         </motion.div>
 
@@ -152,11 +148,10 @@ const Services = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-yellow-500/20 to-primary/20 blur-2xl opacity-40 animate-pulse" />
 
           <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4 relative z-10">
-            Ready to Get Started?
+            Ready to Sell Your House Fast?
           </h3>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto relative z-10">
-            Join the growing number of sellers, rehabbers, and investors who
-            trust Nykson Capital to deliver real results.
+            Get your no-obligation cash offer today. Join thousands of homeowners who chose the fast, easy way to sell.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
             <motion.div whileHover={{ scale: 1.05 }}>
@@ -164,15 +159,17 @@ const Services = () => {
                 size="lg"
                 className="px-10 py-4 rounded-xl text-white font-semibold bg-gradient-to-r from-primary to-yellow-500 shadow-xl hover:shadow-2xl transition"
               >
-                Get Your Free Cash Offer
+                Get My Cash Offer Today
+                <ArrowRight className="ml-2" size={20} />
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }}>
               <Button
                 size="lg"
-                className="px-10 py-4 rounded-xl font-semibold bg-gradient-to-r from-foreground to-muted text-background shadow-xl hover:shadow-2xl transition"
+                variant="outline"
+                className="px-10 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition"
               >
-                Explore Investment Opportunities
+                Call (210) 555-CASH
               </Button>
             </motion.div>
           </div>

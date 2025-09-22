@@ -1,170 +1,235 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  return (
-    <section id="contact" className="py-28 relative bg-background overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-yellow-500/10 to-primary/5 blur-3xl opacity-40" />
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+  };
 
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
+  return (
+    <section id="contact" className="py-20 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
+      <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+
+      <div className="relative z-10 container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <span className="text-primary font-semibold text-lg tracking-wider uppercase">
-            Get In Touch
-          </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-            Ready to Buy, Sell, or{" "}
-            <span className="bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent animate-text-gradient">
-              Invest?
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Get Your{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Cash Offer Today
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Join the growing number of sellers, rehabbers, and investors who trust
-            Nykson Capital to deliver real results. Get started today.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Fill out the form below or call us directly. We'll provide you with a fair, 
+            no-obligation cash offer for your property within 24 hours.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-2xl bg-gradient-to-br from-background/90 to-background/70 border border-border/40 shadow-xl backdrop-blur-lg"
+            transition={{ duration: 0.8 }}
+            className="bg-card p-8 rounded-3xl border border-border shadow-xl"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6">
-              Get Your Free Cash Offer
+              Tell Us About Your Property
             </h3>
-            <form className="space-y-6">
-              {/* Name */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    First Name *
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                >
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    Your Name *
                   </label>
-                  <Input placeholder="John" className="focus:ring-2 focus:ring-primary/60" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Last Name *
+                  <Input
+                    placeholder="Enter your full name"
+                    className="h-12 rounded-xl border-border focus:border-primary transition-colors"
+                    required
+                  />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  <label className="block text-sm font-semibold text-foreground mb-2">
+                    Phone Number *
                   </label>
-                  <Input placeholder="Doe" className="focus:ring-2 focus:ring-primary/60" />
-                </div>
+                  <Input
+                    placeholder="(210) 555-0123"
+                    className="h-12 rounded-xl border-border focus:border-primary transition-colors"
+                    required
+                  />
+                </motion.div>
               </div>
 
-              {/* Email + Phone */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Email *
-                  </label>
-                  <Input type="email" placeholder="john@example.com" className="focus:ring-2 focus:ring-primary/60" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Phone *
-                  </label>
-                  <Input type="tel" placeholder="(210) 555-0123" className="focus:ring-2 focus:ring-primary/60" />
-                </div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Email Address
+                </label>
+                <Input
+                  type="email"
+                  placeholder="your.email@example.com"
+                  className="h-12 rounded-xl border-border focus:border-primary transition-colors"
+                />
+              </motion.div>
 
-              {/* Property */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                <label className="block text-sm font-semibold text-foreground mb-2">
                   Property Address *
                 </label>
-                <Input placeholder="123 Main St, San Antonio, TX 78201" className="focus:ring-2 focus:ring-primary/60" />
-              </div>
+                <Input
+                  placeholder="123 Main St, San Antonio, TX 78201"
+                  className="h-12 rounded-xl border-border focus:border-primary transition-colors"
+                  required
+                />
+              </motion.div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Property Type
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+              >
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Property Condition
                 </label>
-                <select className="w-full h-11 px-3 py-2 text-sm border border-input bg-background rounded-md focus:outline-none focus:ring-2 focus:ring-primary/60">
-                  <option value="">Select property type</option>
-                  <option value="single-family">Single Family Home</option>
-                  <option value="multi-family">Multi-Family</option>
-                  <option value="vacant-land">Vacant Land</option>
-                  <option value="commercial">Commercial</option>
-                  <option value="other">Other</option>
+                <select className="w-full h-12 rounded-xl border border-border bg-background px-4 focus:border-primary transition-colors">
+                  <option value="">Select condition</option>
+                  <option value="excellent">Excellent - Move-in ready</option>
+                  <option value="good">Good - Minor repairs needed</option>
+                  <option value="fair">Fair - Some repairs needed</option>
+                  <option value="poor">Poor - Major repairs needed</option>
+                  <option value="distressed">Distressed - Significant damage</option>
                 </select>
-              </div>
+              </motion.div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
+                <label className="block text-sm font-semibold text-foreground mb-2">
                   Additional Details
                 </label>
                 <Textarea
-                  placeholder="Tell us more about your property and situation..."
-                  className="min-h-[120px] focus:ring-2 focus:ring-primary/60"
+                  placeholder="Tell us about your timeline, any issues with the property, or other details that might help us provide the best offer..."
+                  className="rounded-xl border-border focus:border-primary transition-colors resize-none"
+                  rows={4}
                 />
-              </div>
-
-              <motion.div whileHover={{ scale: 1.03 }}>
-                <Button
-                  variant="hero"
-                  size="lg"
-                  className="w-full rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:shadow-2xl transition"
-                >
-                  Get My Free Cash Offer
-                </Button>
               </motion.div>
 
-              <p className="text-sm text-muted-foreground text-center">
-                We'll contact you within 24 hours with a fair, no-obligation offer.
-              </p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7, duration: 0.6 }}
+              >
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full text-lg py-6 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform"
+                >
+                  Get My Cash Offer Now
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+                <p className="text-sm text-muted-foreground text-center mt-3">
+                  ✓ No obligation ✓ Free evaluation ✓ Response within 24 hours
+                </p>
+              </motion.div>
             </form>
           </motion.div>
 
-          {/* Contact Information */}
+          {/* Contact Information & FAQ */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="space-y-8"
           >
+            {/* Quick Contact */}
+            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                Need to Sell Fast?
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Call us now for an immediate cash offer over the phone.
+              </p>
+              <Button
+                size="lg"
+                className="w-full text-lg py-6 rounded-xl bg-gradient-to-r from-secondary to-primary hover:scale-105 transition-transform"
+              >
+                <Phone className="mr-2" size={20} />
+                Call (210) 555-CASH
+              </Button>
+            </div>
+
+            {/* Contact Details */}
             {[
               {
                 icon: <Phone className="text-primary" size={24} />,
                 title: "Phone",
-                text1: "Coming Soon",
-                text2: "Call us anytime for immediate assistance",
+                text1: "(210) 555-CASH",
+                text2: "Available 7 days a week",
               },
               {
                 icon: <Mail className="text-primary" size={24} />,
                 title: "Email",
-                text1: "info@texasinvestor.us",
-                text2: "We'll respond within 24 hours",
+                text1: "info@nyksoncapital.com",
+                text2: "We respond within 2 hours",
               },
               {
                 icon: <MapPin className="text-primary" size={24} />,
-                title: "Location",
-                text1: "San Antonio, Texas",
-                text2: "Serving San Antonio and surrounding areas",
+                title: "Service Area",
+                text1: "San Antonio & Surrounding Areas",
+                text2: "We buy houses throughout South Texas",
               },
               {
                 icon: <Clock className="text-primary" size={24} />,
-                title: "Business Hours",
-                text1: "Mon - Fri: 8:00 AM - 6:00 PM",
-                text2: "Sat: 9:00 AM - 4:00 PM",
+                title: "Response Time",
+                text1: "Cash Offers in 24 Hours",
+                text2: "Close in 7-14 days",
               },
             ].map((item, i) => (
               <motion.div
                 key={i}
-                whileHover={{ scale: 1.02 }}
-                className="p-6 rounded-xl bg-gradient-to-br from-background/90 to-background/70 border border-border/40 shadow-lg backdrop-blur-md flex items-start gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="p-6 rounded-xl bg-card border border-border shadow-lg flex items-start gap-4"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   {item.icon}
@@ -179,22 +244,29 @@ const Contact = () => {
 
             {/* FAQ Section */}
             <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="p-6 rounded-xl bg-gradient-to-br from-background/90 to-background/70 border border-border/40 shadow-lg backdrop-blur-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="p-6 rounded-xl bg-card border border-border shadow-lg"
             >
-              <h4 className="font-semibold text-foreground mb-4">Quick FAQ</h4>
+              <h4 className="font-semibold text-foreground mb-4">Common Questions</h4>
               <div className="space-y-4">
                 <div>
                   <p className="font-medium text-foreground text-sm">How fast can you close?</p>
-                  <p className="text-muted-foreground text-sm">In many cases, as quickly as 10–14 days.</p>
+                  <p className="text-muted-foreground text-sm">We can close in as little as 7 days, or on your timeline.</p>
                 </div>
                 <div>
                   <p className="font-medium text-foreground text-sm">Do I need to make repairs?</p>
-                  <p className="text-muted-foreground text-sm">No! We buy properties as-is.</p>
+                  <p className="text-muted-foreground text-sm">No! We buy houses as-is, in any condition.</p>
                 </div>
                 <div>
                   <p className="font-medium text-foreground text-sm">Any fees or commissions?</p>
-                  <p className="text-muted-foreground text-sm">None. Our offer is what you get.</p>
+                  <p className="text-muted-foreground text-sm">Zero fees. Our cash offer is exactly what you get.</p>
+                </div>
+                <div>
+                  <p className="font-medium text-foreground text-sm">What if my house needs major work?</p>
+                  <p className="text-muted-foreground text-sm">Perfect! We specialize in distressed properties.</p>
                 </div>
               </div>
             </motion.div>
