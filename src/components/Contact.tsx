@@ -108,7 +108,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Phone</h4>
-                  <p className="text-muted-foreground mb-1">(210) 555-0123</p>
+                  <p className="text-muted-foreground mb-1">Coming Soon</p>
                   <p className="text-sm text-muted-foreground">Call us anytime for immediate assistance</p>
                 </div>
               </div>
@@ -121,7 +121,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-2">Email</h4>
-                  <p className="text-muted-foreground mb-1">info@nyksoncapital.com</p>
+                  <p className="text-muted-foreground mb-1">infotexasinvestor.us</p>
                   <p className="text-sm text-muted-foreground">We'll respond within 24 hours</p>
                 </div>
               </div>
