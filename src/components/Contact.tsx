@@ -11,13 +11,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden">
+    <section
+      id="contact"
+      className="py-24 bg-gradient-to-b from-muted/50 via-background to-muted/30 relative overflow-hidden"
+    >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="relative z-10 container mx-auto px-6">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,14 +30,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get Your{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Cash Offer Today
-            </span>
+            Get Your <span className="text-primary">Cash Offer</span> Today
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Fill out the form below or call us directly. We'll provide you with a fair, 
-            no-obligation cash offer for your property within 24 hours.
+            Fill out the form below or call us directly. We'll provide you with
+            a fair, no-obligation cash offer for your property within 24 hours.
           </p>
         </motion.div>
 
@@ -50,6 +51,7 @@ const Contact = () => {
               Tell Us About Your Property
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name & Phone */}
               <div className="grid md:grid-cols-2 gap-6">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -83,6 +85,7 @@ const Contact = () => {
                 </motion.div>
               </div>
 
+              {/* Email */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -99,6 +102,7 @@ const Contact = () => {
                 />
               </motion.div>
 
+              {/* Address */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -115,6 +119,7 @@ const Contact = () => {
                 />
               </motion.div>
 
+              {/* Property Condition */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -134,6 +139,7 @@ const Contact = () => {
                 </select>
               </motion.div>
 
+              {/* Additional Details */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -144,12 +150,13 @@ const Contact = () => {
                   Additional Details
                 </label>
                 <Textarea
-                  placeholder="Tell us about your timeline, any issues with the property, or other details that might help us provide the best offer..."
+                  placeholder="Tell us about your timeline, any issues with the property, or other details..."
                   className="rounded-xl border-border focus:border-primary transition-colors resize-none"
                   rows={4}
                 />
               </motion.div>
 
+              {/* Submit */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -159,7 +166,7 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full text-lg py-6 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform"
+                  className="w-full text-lg py-6 rounded-xl bg-primary text-white hover:bg-primary/90 hover:shadow-lg hover:scale-[1.02] transition-all"
                 >
                   Get My Cash Offer Now
                   <ArrowRight className="ml-2" size={20} />
@@ -171,7 +178,7 @@ const Contact = () => {
             </form>
           </motion.div>
 
-          {/* Contact Information & FAQ */}
+          {/* Contact Info & FAQ */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -180,7 +187,7 @@ const Contact = () => {
             className="space-y-8"
           >
             {/* Quick Contact */}
-            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20">
+            <div className="bg-card p-8 rounded-3xl border border-border shadow-xl">
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 Need to Sell Fast?
               </h3>
@@ -189,7 +196,7 @@ const Contact = () => {
               </p>
               <Button
                 size="lg"
-                className="w-full text-lg py-6 rounded-xl bg-gradient-to-r from-secondary to-primary hover:scale-105 transition-transform"
+                className="w-full text-lg py-6 rounded-xl bg-secondary text-white hover:bg-secondary/90 hover:shadow-lg hover:scale-[1.02] transition-all"
               >
                 <Phone className="mr-2" size={20} />
                 Call (210) 555-CASH
@@ -201,13 +208,13 @@ const Contact = () => {
               {
                 icon: <Phone className="text-primary" size={24} />,
                 title: "Phone",
-                text1: "(210) 555-CASH",
+                text1: "Coming Soon",
                 text2: "Available 7 days a week",
               },
               {
                 icon: <Mail className="text-primary" size={24} />,
                 title: "Email",
-                text1: "info@nyksoncapital.com",
+                text1: "info@texasinvestor.us",
                 text2: "We respond within 2 hours",
               },
               {
@@ -229,15 +236,19 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="p-6 rounded-xl bg-card border border-border shadow-lg flex items-start gap-4"
+                className="p-6 rounded-3xl bg-card border border-border shadow-lg hover:shadow-xl transition"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  {item.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
-                  <p className="text-muted-foreground mb-1">{item.text1}</p>
-                  <p className="text-sm text-muted-foreground">{item.text2}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">
+                      {item.title}
+                    </h4>
+                    <p className="text-muted-foreground">{item.text1}</p>
+                    <p className="text-sm text-muted-foreground">{item.text2}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -248,25 +259,43 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="p-6 rounded-xl bg-card border border-border shadow-lg"
+              className="p-6 rounded-3xl bg-card border border-border shadow-lg"
             >
-              <h4 className="font-semibold text-foreground mb-4">Common Questions</h4>
-              <div className="space-y-4">
+              <h4 className="font-semibold text-foreground mb-4">
+                Common Questions
+              </h4>
+              <div className="space-y-6">
                 <div>
-                  <p className="font-medium text-foreground text-sm">How fast can you close?</p>
-                  <p className="text-muted-foreground text-sm">We can close in as little as 7 days, or on your timeline.</p>
+                  <p className="font-medium text-foreground text-sm">
+                    How fast can you close?
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    We can close in as little as 7 days, or on your timeline.
+                  </p>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">Do I need to make repairs?</p>
-                  <p className="text-muted-foreground text-sm">No! We buy houses as-is, in any condition.</p>
+                  <p className="font-medium text-foreground text-sm">
+                    Do I need to make repairs?
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    No! We buy houses as-is, in any condition.
+                  </p>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">Any fees or commissions?</p>
-                  <p className="text-muted-foreground text-sm">Zero fees. Our cash offer is exactly what you get.</p>
+                  <p className="font-medium text-foreground text-sm">
+                    Any fees or commissions?
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Zero fees. Our cash offer is exactly what you get.
+                  </p>
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">What if my house needs major work?</p>
-                  <p className="text-muted-foreground text-sm">Perfect! We specialize in distressed properties.</p>
+                  <p className="font-medium text-foreground text-sm">
+                    What if my house needs major work?
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Perfect! We specialize in distressed properties.
+                  </p>
                 </div>
               </div>
             </motion.div>

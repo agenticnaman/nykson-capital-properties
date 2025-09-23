@@ -51,12 +51,9 @@ const Services = () => {
   ];
 
   return (
-    <section
-      id="services"
-      className="py-28 relative overflow-hidden bg-background"
-    >
+    <section id="services" className="py-28 relative overflow-hidden bg-background">
       {/* Subtle glowing gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-yellow-500/5 blur-3xl opacity-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-yellow-500/5 blur-3xl opacity-40" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
@@ -71,10 +68,7 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-            How We Help{" "}
-            <span className="animate-text-gradient bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent">
-              Homeowners Sell Fast
-            </span>
+            How We Help <span className="text-primary">Homeowners Sell Fast</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We specialize in buying houses directly from homeowners. No agents, no repairs, no hassle.
@@ -89,14 +83,11 @@ const Services = () => {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.03, rotate: 0.5 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
-              className="p-8 rounded-2xl relative group bg-gradient-to-br from-background/90 to-background/70 border border-border/40 shadow-xl backdrop-blur-lg hover:shadow-2xl transition-all"
+              className="p-8 rounded-3xl relative group bg-card border border-border shadow-lg hover:shadow-xl transition-all"
             >
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 via-yellow-500/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
-
               <div className="relative z-10">
                 <div className="text-primary mb-6 transform group-hover:scale-110 transition-transform duration-300">
                   {service.icon}
@@ -113,10 +104,7 @@ const Services = () => {
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2">
-                      <motion.div
-                        whileHover={{ scale: 1.3 }}
-                        className="w-2.5 h-2.5 bg-gradient-to-r from-primary to-yellow-500 rounded-full"
-                      />
+                      <div className="w-2.5 h-2.5 rounded-full bg-primary" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -142,11 +130,8 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center rounded-2xl p-14 bg-gradient-to-r from-primary/10 via-primary/5 to-yellow-500/10 border border-primary/20 shadow-xl backdrop-blur-lg relative overflow-hidden"
+          className="text-center rounded-3xl p-14 bg-card border border-border shadow-xl relative overflow-hidden"
         >
-          {/* Animated background glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-yellow-500/20 to-primary/20 blur-2xl opacity-40 animate-pulse" />
-
           <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4 relative z-10">
             Ready to Sell Your House Fast?
           </h3>
@@ -157,7 +142,7 @@ const Services = () => {
             <motion.div whileHover={{ scale: 1.05 }}>
               <Button
                 size="lg"
-                className="px-10 py-4 rounded-xl text-white font-semibold bg-gradient-to-r from-primary to-yellow-500 shadow-xl hover:shadow-2xl transition"
+                className="px-10 py-4 rounded-xl text-white font-semibold bg-primary shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
               >
                 Get My Cash Offer Today
                 <ArrowRight className="ml-2" size={20} />
@@ -167,7 +152,7 @@ const Services = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="px-10 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition"
+                className="px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
               >
                 Call (210) 555-CASH
               </Button>

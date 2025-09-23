@@ -40,7 +40,7 @@ const Hero = () => {
           >
             We Buy Houses for Cash in{" "}
             <span className="bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent animate-text-gradient">
-              San Antonio - Any Condition!
+              San Antonio — Any Condition!
             </span>
           </motion.h1>
 
@@ -51,7 +51,9 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl leading-relaxed"
           >
-            Sell your house as-is! No repairs, no agent fees, no waiting months for a buyer. We buy distressed properties, inherited homes, and houses in any condition. Get your fair cash offer in 24 hours.
+            Sell your house fast! No repairs, no agent fees, no waiting months
+            for a buyer. We buy distressed properties, inherited homes, and
+            houses in any condition. Get your fair cash offer in 24 hours.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -63,11 +65,12 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="text-lg px-8 py-4 h-auto rounded-xl shadow-xl bg-gradient-to-r from-primary to-yellow-500 text-white font-semibold hover:scale-105 transition transform"
+              className="text-lg px-8 py-4 h-auto rounded-xl shadow-xl bg-gradient-to-r from-primary to-yellow-500 font-semibold hover:scale-105 transition transform text-neutral-950"
             >
               Get My Cash Offer Now
               <ArrowRight className="ml-2" size={20} />
             </Button>
+
             <Button
               size="lg"
               className="text-lg px-8 py-4 h-auto rounded-xl bg-white/10 text-white border border-white/30 hover:bg-white/20 hover:scale-105 transition transform flex items-center"
@@ -87,7 +90,7 @@ const Hero = () => {
             {[
               { value: "10+", label: "Years Buying Houses" },
               { value: "1,200+", label: "Houses Purchased" },
-              { value: "7-14", label: "Days to Close" },
+              { value: "7–14", label: "Days to Close" },
             ].map((stat, i) => (
               <motion.div
                 key={i}

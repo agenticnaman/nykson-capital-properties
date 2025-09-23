@@ -18,18 +18,19 @@ const PropertyConditions = () => {
     "Homes with Bad Tenants",
     "Divorce Properties",
     "Properties Behind on Taxes",
-    "Any Condition - We Buy All!"
+    "Any Condition - We Buy All!",
   ];
 
   const beforeAfterImages = [
     { before: distressedProperty1, title: "Water Damage Restoration" },
     { before: distressedProperty2, title: "Fire Damage Recovery" },
-    { before: distressedProperty3, title: "Complete Renovation" }
+    { before: distressedProperty3, title: "Complete Renovation" },
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,18 +40,17 @@ const PropertyConditions = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             We Buy Houses in{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ANY Condition
-            </span>
+            <span className="text-primary">Any Condition</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Don't worry about the condition of your property. We specialize in buying distressed properties 
-            that other buyers won't touch. We see potential where others see problems.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Don't worry about the condition of your property. We specialize in buying
+            distressed properties that other buyers won't touch. We see potential where
+            others see problems.
           </p>
         </motion.div>
 
         {/* Property Examples */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-10 mb-20">
           {beforeAfterImages.map((image, index) => (
             <motion.div
               key={index}
@@ -58,15 +58,15 @@ const PropertyConditions = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-card rounded-3xl overflow-hidden border border-border shadow-md hover:shadow-xl transition-all duration-300"
             >
               <div className="relative">
                 <img
                   src={image.before}
                   alt={image.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-52 object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-sm font-semibold">
+                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                   Before
                 </div>
               </div>
@@ -74,7 +74,7 @@ const PropertyConditions = () => {
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {image.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-sm leading-relaxed">
                   We bought this property as-is and transformed it into a beautiful home.
                 </p>
               </div>
@@ -82,8 +82,9 @@ const PropertyConditions = () => {
           ))}
         </div>
 
-        {/* Conditions List */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        {/* Conditions + CTA */}
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Side - List */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -100,32 +101,33 @@ const PropertyConditions = () => {
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.05, duration: 0.4 }}
+                  transition={{ delay: index * 0.04, duration: 0.4 }}
                   className="flex items-center"
                 >
                   <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
-                  <span className="text-foreground font-medium">{condition}</span>
+                  <span className="text-foreground text-base">{condition}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
+          {/* Right Side - CTA Box */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20"
+            className="bg-muted/40 p-10 rounded-3xl border border-border shadow-lg"
           >
-            <h3 className="text-2xl font-bold text-foreground mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Still Not Sure If We'll Buy Your House?
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
-              We've purchased over 1,200 properties in every imaginable condition. 
-              From minor cosmetic issues to major structural problems - we buy them all. 
-              The worst that can happen is we say "yes"!
+            <p className="text-muted-foreground mb-8 leading-relaxed">
+              We've purchased over <span className="font-semibold text-foreground">1,200+ properties</span> 
+              in every imaginable condition. From minor cosmetic issues to major structural 
+              problems — we buy them all. The worst that can happen is we say “yes”!
             </p>
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               <div className="flex items-center">
                 <Check className="w-5 h-5 text-primary mr-3" />
                 <span className="text-foreground">Free property evaluation</span>
@@ -139,7 +141,7 @@ const PropertyConditions = () => {
                 <span className="text-foreground">Close on your timeline</span>
               </div>
             </div>
-            <Button className="w-full mt-6 text-lg py-6 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform">
+            <Button className="w-full text-lg py-6 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] transition-transform shadow-md">
               Get My Cash Offer Today
             </Button>
           </motion.div>

@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { motion } from "framer-motion";
+import testimonialImage from "@/assets/testimonial-male.jpg";
 
 const Testimonials = () => {
   const testimonials = [
@@ -13,12 +14,11 @@ const Testimonials = () => {
       rating: 5,
     },
     {
-      name: "Sarah Lopez",
-      role: "Property Seller",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=150&q=80",
+      name: "Michael Rodriguez",
+      role: "Property Owner",
+      image: testimonialImage,
       quote:
-        "I needed to sell fast, and they came through. Straightforward, honest, and professional. Highly recommend to anyone looking to sell quickly.",
+        "Selling my inherited property seemed impossible until I found Nykson Capital. They made me a fair cash offer and closed in just 10 days. No repairs, no hassles - exactly what I needed during a difficult time.",
       rating: 5,
     },
     {
@@ -33,36 +33,29 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-28 relative bg-background overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-yellow-500/10 to-primary/5 blur-3xl opacity-40" />
-
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="testimonials" className="py-20 bg-background">
+      <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <span className="text-primary font-semibold text-lg tracking-wider uppercase">
+          <span className="text-primary font-semibold text-sm tracking-wider uppercase">
             Client Testimonials
           </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-            What Our Clients{" "}
-            <span className="bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent animate-text-gradient">
-              Say About Us
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+            What Our Clients <span className="text-primary">Say About Us</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Don&apos;t just take our word for it. Here’s what sellers, investors,
-            and partners have to say about working with Nykson Capital.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Here's what sellers, investors, and partners have to say about working with Nykson Capital.
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -70,50 +63,30 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.03 }}
-              className="p-8 rounded-2xl relative bg-gradient-to-br from-background/90 to-background/70 border border-border/40 shadow-lg hover:shadow-2xl backdrop-blur-lg transition-all group"
+              whileHover={{ y: -5 }}
+              className="p-8 rounded-3xl bg-card border border-border shadow-lg hover:shadow-xl transition-all"
             >
-              {/* Glow Hover Effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/20 via-yellow-500/20 to-primary/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500" />
+              <Quote className="text-primary/30 mb-4" size={32} />
 
-              {/* Quote Icon */}
-              <Quote className="absolute top-6 right-6 text-primary/20" size={32} />
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="text-yellow-400 fill-current" size={18} />
+                ))}
+              </div>
 
-              <div className="relative z-10">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: i * 0.1 }}
-                    >
-                      <Star className="text-yellow-400 fill-current" size={20} />
-                    </motion.div>
-                  ))}
-                </div>
+              <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
+                "{testimonial.quote}"
+              </blockquote>
 
-                {/* Quote */}
-                <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
-                  “{testimonial.quote}”
-                </blockquote>
-
-                {/* Client Info */}
-                <div className="flex items-center gap-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover border border-primary/30"
-                  />
-                  <div>
-                    <div className="font-semibold text-foreground">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </div>
-                  </div>
+              <div className="flex items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-12 h-12 rounded-full object-cover border-2 border-border"
+                />
+                <div>
+                  <div className="font-semibold text-foreground text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>
@@ -126,7 +99,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-20 pt-16 border-t border-border/40"
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border"
         >
           {[
             { value: "500+", label: "Properties Sold" },
@@ -138,14 +111,14 @@ const Testimonials = () => {
               key={i}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className="text-3xl md:text-4xl font-extrabold text-foreground mb-2">
+              <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                 {stat.value}
               </div>
-              <div className="text-muted-foreground">{stat.label}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

@@ -38,6 +38,7 @@ const WhySellToUs = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,16 +47,14 @@ const WhySellToUs = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Thousands Choose{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Nykson Capital
-            </span>
+            Why Thousands Choose <span className="text-primary">Nykson Capital</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We make selling your house simple, fast, and profitable. No matter the condition or situation.
           </p>
         </motion.div>
 
+        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
@@ -65,21 +64,18 @@ const WhySellToUs = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-card p-8 rounded-2xl border border-border shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-card p-8 rounded-3xl border border-border shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
+              <div className="w-16 h-16 rounded-xl flex items-center justify-center mb-6 text-primary bg-gray-950">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-4">
-                {benefit.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {benefit.description}
-              </p>
+              <h3 className="text-xl font-semibold text-foreground mb-4">{benefit.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
 
+        {/* CTA Box */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,9 +83,9 @@ const WhySellToUs = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 max-w-4xl mx-auto">
+          <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8 max-w-4xl mx-auto">
             <div className="flex items-center justify-center mb-4">
-              <Check className="w-8 h-8 text-primary mr-3" />
+              <Check className="w-8 h-8 text-primary mr-3 bg-slate-50 rounded-full p-1" />
               <h3 className="text-2xl font-bold text-foreground">
                 100% No-Obligation Cash Offers
               </h3>

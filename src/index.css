@@ -6,48 +6,42 @@
 
 @layer base {
   :root {
-    /* Premium Real Estate Color Palette */
+    /* Professional Color Palette - Based on Logo */
     --background: 0 0% 100%;
-    --foreground: 220 15% 15%;
+    --foreground: 0 0% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 15%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Brand Primary - Sophisticated Green */
-    --primary: 84 65% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 84 65% 55%;
+    /* Brand Primary - Bright Lime Green (from logo) */
+    --primary: 75 85% 55%;
+    --primary-foreground: 0 0% 15%;
+    --primary-glow: 75 85% 65%;
 
-    /* Elegant Secondary - Charcoal */
-    --secondary: 220 15% 25%;
-    --secondary-foreground: 0 0% 100%;
+    /* Clean Secondary - Dark Gray */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 15%;
 
-    /* Luxury Accent - Light Gray */
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 45%;
+    /* Neutral Accent - Light Gray */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 84 30% 95%;
-    --accent-foreground: 220 15% 15%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 95%;
-    --ring: 84 65% 45%;
+    --border: 0 0% 88%;
+    --input: 0 0% 96%;
+    --ring: 75 85% 55%;
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(220 15% 15% / 0.95), hsl(84 65% 45% / 0.1));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
-
-    /* Premium Shadows */
-    --shadow-elegant: 0 20px 50px -10px hsl(var(--primary) / 0.15);
-    --shadow-card: 0 10px 30px -5px hsl(220 15% 15% / 0.1);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    /* Clean Professional Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 15% / 0.08);
+    --shadow-button: 0 2px 8px -1px hsl(75 85% 55% / 0.25);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -126,37 +120,20 @@
 }
 
 @layer components {
-  /* Premium Button Variants */
-  .btn-hero {
-    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground 
-           shadow-[var(--shadow-elegant)] hover:shadow-[var(--shadow-glow)]
-           transform hover:-translate-y-1 transition-[var(--transition-spring)];
+  /* Clean Professional Button Variants */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground shadow-[var(--shadow-button)]
+           hover:bg-primary/90 transition-[var(--transition-smooth)];
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground border-2 border-transparent
-           hover:border-primary hover:text-primary transition-[var(--transition-smooth)];
+    @apply bg-secondary text-secondary-foreground border border-border
+           hover:bg-accent transition-[var(--transition-smooth)];
   }
 
-  /* Premium Card Styles */
-  .card-premium {
-    @apply bg-card shadow-[var(--shadow-card)] rounded-xl border border-border/50
-           hover:shadow-[var(--shadow-elegant)] transition-[var(--transition-smooth)]
-           backdrop-blur-sm;
-  }
-
-  /* Hero Section Styling */
-  .hero-gradient {
-    background: var(--gradient-hero);
-  }
-
-  /* Section Backgrounds */
-  .section-gradient {
-    background: var(--gradient-section);
-  }
-
-  /* Text Gradients */
-  .text-gradient-primary {
-    @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
+  /* Clean Card Styles */
+  .card-clean {
+    @apply bg-card shadow-[var(--shadow-card)] rounded-lg border border-border
+           hover:shadow-lg transition-[var(--transition-smooth)];
   }
 }
