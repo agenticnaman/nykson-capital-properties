@@ -7,51 +7,58 @@ const Services = () => {
     {
       icon: <DollarSign className="w-12 h-12" />,
       title: "Cash for Houses - Any Condition",
-      description: "We buy houses in any condition with cash. No repairs, no cleaning, no staging required.",
+      description:
+        "We buy houses in any condition with cash. No repairs, no cleaning, no staging required.",
       features: [
         "Instant cash offers within 24 hours",
         "Buy houses as-is in any condition",
         "No realtor fees or commissions",
-        "Handle all paperwork and closing costs"
-      ]
+        "Handle all paperwork and closing costs",
+      ],
     },
     {
       icon: <Clock className="w-12 h-12" />,
       title: "Fast Closings - Your Timeline",
-      description: "Close on your schedule. Whether you need to sell in 7 days or 60 days, we work with your timeline.",
+      description:
+        "Close on your schedule. Whether you need to sell in 7 days or 60 days, we work with your timeline.",
       features: [
         "Close in as little as 7 days",
         "Flexible closing dates to fit your needs",
         "No waiting for bank approvals",
-        "Cash in hand at closing"
-      ]
+        "Cash in hand at closing",
+      ],
     },
     {
       icon: <Home className="w-12 h-12" />,
       title: "Problem Properties Welcome",
-      description: "Fire damage, water damage, foundation issues, or hoarding situations - we buy them all.",
+      description:
+        "Fire damage, water damage, foundation issues, or hoarding situations - we buy them all.",
       features: [
         "Fire and water damaged properties",
         "Inherited properties you don't want",
         "Properties in foreclosure",
-        "Houses needing major repairs"
-      ]
+        "Houses needing major repairs",
+      ],
     },
     {
       icon: <Shield className="w-12 h-12" />,
       title: "Fair Market Value Offers",
-      description: "Our offers are based on current market conditions and your property's potential value.",
+      description:
+        "Our offers are based on current market conditions and your property's potential value.",
       features: [
         "Professional property evaluations",
         "Transparent offer calculations",
         "Local market expertise",
-        "No lowball offers - fair deals only"
-      ]
-    }
+        "No lowball offers - fair deals only",
+      ],
+    },
   ];
 
   return (
-    <section id="services" className="py-28 relative overflow-hidden bg-background">
+    <section
+      id="services"
+      className="py-28 relative overflow-hidden bg-background"
+    >
       {/* Subtle glowing gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-yellow-500/5 blur-3xl opacity-40" />
 
@@ -68,11 +75,13 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="text-4xl md:text-6xl font-extrabold text-foreground mt-3 mb-6 leading-tight">
-            How We Help <span className="text-primary">Homeowners Sell Fast</span>
+            How We Help{" "}
+            <span className="text-primary">Homeowners Sell Fast</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We specialize in buying houses directly from homeowners. No agents, no repairs, no hassle.
-            Just fast, fair cash offers for your property.
+            We specialize in buying houses directly from homeowners. No agents,
+            no repairs, no hassle. Just fast, fair cash offers for your
+            property.
           </p>
         </motion.div>
 
@@ -136,23 +145,24 @@ const Services = () => {
             Ready to Sell Your House Fast?
           </h3>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto relative z-10">
-            Get your no-obligation cash offer today. Join thousands of homeowners who chose the fast, easy way to sell.
+            Get your no-obligation cash offer today. Join thousands of
+            homeowners who chose the fast, easy way to sell.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-            <motion.div whileHover={{ scale: 1.05 }}>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10 w-full">
+            <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
               <Button
                 size="lg"
-                className="px-10 py-4 rounded-xl text-white font-semibold bg-primary shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
+                className="w-full sm:w-auto px-10 py-4 rounded-xl text-white font-semibold bg-primary shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
               >
                 Get My Cash Offer Today
                 <ArrowRight className="ml-2" size={20} />
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }}>
+            <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
+                className="w-full sm:w-auto px-10 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition"
               >
                 Call (210) 555-CASH
               </Button>
