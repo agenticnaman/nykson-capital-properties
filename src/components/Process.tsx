@@ -123,7 +123,7 @@ const Process = () => {
               Join thousands of satisfied homeowners who chose the fast, easy way to sell their house.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="text-lg px-8 py-6 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform">
+              <Button size="lg" className="text-lg px-8 py-6 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 transition-transform">
                 Start My Cash Offer Now
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
