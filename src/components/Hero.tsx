@@ -21,27 +21,24 @@ const Hero = () => {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/50 to-black/30" />
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 py-28">
+      <div className="relative z-20 container mx-auto px-6 py-28 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl"
+          className="max-w-3xl"
         >
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
           >
-            We Buy Houses for Cash in{" "}
-            <span className="bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent animate-text-gradient">
-              San Antonio — Any Condition!
-            </span>
+            Sell Your <span className="text-primary">San Antonio Home</span> for Cash
           </motion.h1>
 
           {/* Subheadline */}
@@ -49,11 +46,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl leading-relaxed"
+            className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed"
           >
-            Sell your house fast! No repairs, no agent fees, no waiting months
-            for a buyer. We buy distressed properties, inherited homes, and
-            houses in any condition. Get your fair cash offer in 24 hours.
+            Fast, fair, and stress-free. No repairs. No agent fees. No waiting months.
+            Get your cash offer within 24 hours and close on your timeline.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -61,7 +57,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 mb-14"
+            className="flex flex-col sm:flex-row justify-center gap-4 mb-14"
           >
             <Button
               size="lg"
@@ -85,7 +81,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="flex flex-wrap items-center gap-10 text-white/80"
+            className="flex flex-wrap justify-center items-center gap-10 text-white/80"
           >
             {[
               { value: "10+", label: "Years Buying Houses" },
@@ -95,10 +91,10 @@ const Hero = () => {
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05 }}
-                className="flex items-center gap-3"
+                className="flex flex-col items-center"
               >
-                <div className="w-14 h-14 bg-primary/30 rounded-full flex items-center justify-center shadow-md">
-                  <span className="text-2xl font-bold text-primary">
+                <div className="w-16 h-16 bg-primary/30 rounded-full flex items-center justify-center shadow-md mb-2">
+                  <span className="text-xl font-bold text-primary">
                     {stat.value}
                   </span>
                 </div>
