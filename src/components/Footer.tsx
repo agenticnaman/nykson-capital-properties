@@ -5,34 +5,36 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground py-16">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <img src={logoImage} alt="Nykson Capital" className="h-10 w-10" />
-              <div className="flex flex-col">
+            <div className="flex items-center space-x-3 mb-6">
+              <img src={logoImage} alt="Nykson Capital" className="h-12 w-12" />
+              <div>
                 <span className="text-xl font-bold">Nykson Capital</span>
-                <span className="text-sm text-muted-foreground">Real Estate Investment</span>
+                <p className="text-sm text-muted-foreground">Real Estate Investment</p>
               </div>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-md leading-relaxed">
+            <p className="text-muted-foreground mb-6 max-w-lg leading-relaxed">
               A privately held property investment firm dedicated to creating win-win real estate 
               solutions across Texas. We specialize in acquiring undervalued properties and 
               helping owners unlock their true value.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Facebook className="text-primary" size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Twitter className="text-primary" size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Linkedin className="text-primary" size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors">
-                <Instagram className="text-primary" size={20} />
-              </a>
+              {[
+                { icon: Facebook, link: "#" },
+                { icon: Twitter, link: "#" },
+                { icon: Linkedin, link: "#" },
+                { icon: Instagram, link: "#" }
+              ].map(({ icon: Icon, link }, idx) => (
+                <a
+                  key={idx}
+                  href={link}
+                  className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                >
+                  <Icon className="text-primary" size={20} />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -40,51 +42,62 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-muted-foreground hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Services</a></li>
-              <li><a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+              {["Home", "About Us", "Services", "Testimonials", "Contact"].map((item, idx) => (
+                <li key={idx}>
+                  <a
+                    href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Services */}
           <div>
             <h4 className="font-semibold text-lg mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              <li><span className="text-muted-foreground">Direct Property Purchases</span></li>
-              <li><span className="text-muted-foreground">Investor Partnerships</span></li>
-              <li><span className="text-muted-foreground">Deal Structuring</span></li>
-              <li><span className="text-muted-foreground">Rehab & Flip Support</span></li>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>Direct Property Purchases</li>
+              <li>Investor Partnerships</li>
+              <li>Deal Structuring</li>
+              <li>Rehab & Flip Support</li>
             </ul>
           </div>
         </div>
 
         {/* Contact Info Bar */}
-        <div className="grid md:grid-cols-3 gap-4 mt-12 pt-8 border-t border-border/20">
+        <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-border/20">
           <div className="flex items-center gap-3">
             <Phone className="text-primary" size={20} />
             <span className="text-muted-foreground">Coming Soon!</span>
           </div>
           <div className="flex items-center gap-3">
             <Mail className="text-primary" size={20} />
-            <span className="text-muted-foreground">infotexasinvestor.us</span>
+            <span className="text-muted-foreground">info@texasinvestor.us</span>
           </div>
           <div className="flex items-center gap-3">
             <MapPin className="text-primary" size={20} />
-            <span className="text-muted-foreground">San Antonio, Texas-USA</span>
+            <span className="text-muted-foreground">San Antonio, Texas - USA</span>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-border/20">
           <p className="text-muted-foreground text-sm">
-            © 2024 Nykson Capital. All rights reserved.
+            © {new Date().getFullYear()} Nykson Capital. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Terms of Service</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Cookie Policy</a>
+            {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item, idx) => (
+              <a
+                key={idx}
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>
