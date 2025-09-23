@@ -145,7 +145,7 @@ const Services = () => {
           className="text-center rounded-2xl p-14 bg-gradient-to-r from-primary/10 via-primary/5 to-yellow-500/10 border border-primary/20 shadow-xl backdrop-blur-lg relative overflow-hidden"
         >
           {/* Animated background glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-yellow-500/20 to-primary/20 blur-2xl opacity-40 animate-pulse" />
+          <div className="absolute inset-0 bg-white blur-2xl opacity-40" />
 
           <h3 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4 relative z-10">
             Ready to Sell Your House Fast?
