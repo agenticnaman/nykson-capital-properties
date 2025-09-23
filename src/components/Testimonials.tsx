@@ -33,7 +33,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-muted/30">
+    <section id="testimonials" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -47,12 +47,10 @@ const Testimonials = () => {
             Client Testimonials
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
-            What Our Clients{" "}
-            <span className="text-primary">Say About Us</span>
+            What Our Clients <span className="text-primary">Say About Us</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what sellers, investors,
-            and partners have to say about working with Nykson Capital.
+            Here's what sellers, investors, and partners have to say about working with Nykson Capital.
           </p>
         </motion.div>
 
@@ -66,24 +64,20 @@ const Testimonials = () => {
               transition={{ delay: index * 0.15, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="p-8 rounded-lg bg-card border border-border shadow-[var(--shadow-card)] hover:shadow-lg transition-all group"
+              className="p-8 rounded-3xl bg-card border border-border shadow-lg hover:shadow-xl transition-all"
             >
-              {/* Quote Icon */}
               <Quote className="text-primary/30 mb-4" size={32} />
 
-              {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="text-yellow-400 fill-current" size={18} />
                 ))}
               </div>
 
-              {/* Quote */}
               <blockquote className="text-muted-foreground mb-6 leading-relaxed italic">
                 "{testimonial.quote}"
               </blockquote>
 
-              {/* Client Info */}
               <div className="flex items-center gap-4">
                 <img
                   src={testimonial.image}
@@ -91,12 +85,8 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover border-2 border-border"
                 />
                 <div>
-                  <div className="font-semibold text-foreground text-sm">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-xs text-muted-foreground">
-                    {testimonial.role}
-                  </div>
+                  <div className="font-semibold text-foreground text-sm">{testimonial.name}</div>
+                  <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                 </div>
               </div>
             </motion.div>
