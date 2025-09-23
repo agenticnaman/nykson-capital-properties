@@ -47,7 +47,7 @@ const WhySellToUs = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Why Thousands Choose{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="text-primary">
               Nykson Capital
             </span>
           </h2>
