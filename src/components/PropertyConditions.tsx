@@ -66,9 +66,6 @@ const PropertyConditions = () => {
                   alt={image.title}
                   className="w-full h-52 object-cover"
                 />
-                <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-full text-xs font-semibold shadow-md">
-                  Before
-                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-foreground mb-2">
