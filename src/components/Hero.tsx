@@ -38,9 +38,9 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight"
           >
-            Turning Properties Into{" "}
+            We Buy Houses for Cash in{" "}
             <span className="bg-gradient-to-r from-primary via-yellow-500 to-primary bg-clip-text text-transparent animate-text-gradient">
-              Profitable Opportunities
+              San Antonio - Any Condition!
             </span>
           </motion.h1>
 
@@ -51,10 +51,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl leading-relaxed"
           >
-            We partner with motivated sellers, investors, and rehabbers to
-            create win-win solutions in San Antonio and beyond. Fast,
-            transparent, and professional — that&apos;s how real estate should
-            be.
+            Sell your house as-is! No repairs, no agent fees, no waiting months for a buyer. We buy distressed properties, inherited homes, and houses in any condition. Get your fair cash offer in 24 hours.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -68,7 +65,7 @@ const Hero = () => {
               size="lg"
               className="text-lg px-8 py-4 h-auto rounded-xl shadow-xl bg-gradient-to-r from-primary to-yellow-500 text-white font-semibold hover:scale-105 transition transform"
             >
-              Get Your Free Cash Offer Today
+              Get My Cash Offer Now
               <ArrowRight className="ml-2" size={20} />
             </Button>
             <Button
@@ -76,7 +73,7 @@ const Hero = () => {
               className="text-lg px-8 py-4 h-auto rounded-xl bg-white/10 text-white border border-white/30 hover:bg-white/20 hover:scale-105 transition transform flex items-center"
             >
               <Play className="mr-2" size={20} />
-              Watch Our Process
+              Call (210) 555-CASH
             </Button>
           </motion.div>
 
@@ -88,9 +85,9 @@ const Hero = () => {
             className="flex flex-wrap items-center gap-10 text-white/80"
           >
             {[
-              { value: "10+", label: "Years Experience" },
-              { value: "500+", label: "Properties Sold" },
-              { value: "14", label: "Day Average Close" },
+              { value: "10+", label: "Years Buying Houses" },
+              { value: "1,200+", label: "Houses Purchased" },
+              { value: "7-14", label: "Days to Close" },
             ].map((stat, i) => (
               <motion.div
                 key={i}
