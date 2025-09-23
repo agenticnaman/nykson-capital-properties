@@ -22,8 +22,8 @@ const Header = () => {
       initial={{ y: -60 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-border/40 transition-all duration-500 ${
-        scrolled ? "bg-background/90 shadow-lg h-16" : "bg-background/60 h-20"
+      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-border transition-all duration-300 ${
+        scrolled ? "bg-background/95 shadow-sm h-16" : "bg-background/90 h-20"
       }`}
     >
       <div className="container mx-auto px-6">
@@ -38,14 +38,14 @@ const Header = () => {
               alt="Nykson Capital"
               className="h-12 w-12 object-contain drop-shadow-md"
             />
-            <div className="flex flex-col leading-tight">
+            <a href="#home" className="flex flex-col leading-tight hover:opacity-80 transition-opacity">
               <span className="text-xl font-semibold tracking-wide text-foreground">
                 Nykson Capital
               </span>
               <span className="text-sm text-muted-foreground">
-                Real Estate Investment
+                Real Estate Firm
               </span>
-            </div>
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -77,10 +77,10 @@ const Header = () => {
               <Phone size={16} />
               Coming Soon
             </Button>
-            <motion.div whileHover={{ scale: 1.05 }}>
+            <motion.div whileHover={{ scale: 1.02 }}>
               <Button
                 size="lg"
-                className="px-6 py-2 text-sm font-semibold tracking-wide rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:shadow-xl transition"
+                className="px-6 py-2 text-sm font-semibold tracking-wide rounded-lg bg-primary text-primary-foreground shadow-[var(--shadow-button)] hover:bg-primary/90 transition-all"
               >
                 Get Cash Offer
               </Button>
@@ -121,7 +121,7 @@ const Header = () => {
                 <div className="pt-5 border-t border-border/40">
                   <Button
                     size="lg"
-                    className="w-full rounded-xl bg-gradient-to-r from-primary to-yellow-500 text-white shadow-lg hover:shadow-xl transition"
+                    className="w-full rounded-lg bg-primary text-primary-foreground shadow-[var(--shadow-button)] hover:bg-primary/90 transition-all"
                   >
                     Get Cash Offer
                   </Button>

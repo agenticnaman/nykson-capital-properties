@@ -28,7 +28,7 @@ const PropertyConditions = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -39,11 +39,9 @@ const PropertyConditions = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             We Buy Houses in{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              ANY Condition
-            </span>
+            <span className="text-primary">ANY Condition</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             Don't worry about the condition of your property. We specialize in buying distressed properties 
             that other buyers won't touch. We see potential where others see problems.
           </p>
@@ -58,7 +56,7 @@ const PropertyConditions = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-card rounded-lg overflow-hidden shadow-[var(--shadow-card)] hover:shadow-lg transition-all duration-300"
             >
               <div className="relative">
                 <img
@@ -115,7 +113,7 @@ const PropertyConditions = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20"
+            className="bg-muted/50 p-8 rounded-lg border border-border"
           >
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Still Not Sure If We'll Buy Your House?
@@ -139,7 +137,7 @@ const PropertyConditions = () => {
                 <span className="text-foreground">Close on your timeline</span>
               </div>
             </div>
-            <Button className="w-full mt-6 text-lg py-6 rounded-xl bg-gradient-to-r from-primary to-secondary hover:scale-105 transition-transform">
+            <Button className="w-full mt-6 text-lg py-6 rounded-lg bg-primary text-primary-foreground shadow-[var(--shadow-button)] hover:bg-primary/90 transition-all">
               Get My Cash Offer Today
             </Button>
           </motion.div>
