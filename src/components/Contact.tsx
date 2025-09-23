@@ -208,13 +208,13 @@ const Contact = () => {
               {
                 icon: <Phone className="text-primary" size={24} />,
                 title: "Phone",
-                text1: "(210) 555-CASH",
+                text1: "Coming Soon",
                 text2: "Available 7 days a week",
               },
               {
                 icon: <Mail className="text-primary" size={24} />,
                 title: "Email",
-                text1: "info@nyksoncapital.com",
+                text1: "info@texasinvestor.us",
                 text2: "We respond within 2 hours",
               },
               {
