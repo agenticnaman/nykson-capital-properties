@@ -53,32 +53,13 @@ export default function Header() {
             </div>
           </motion.a>
 
-          {/* Mobile CTA and Menu */}
-          <div className="flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="hidden sm:flex items-center gap-1 text-muted-foreground hover:text-primary hover:bg-accent/10 transition-all text-xs px-3 py-1"
-            >
-              <Phone size={14} />
-              <span className="hidden sm:inline">Coming Soon</span>
-            </Button>
-            <motion.div whileHover={{ scale: 1.02 }} className="hidden sm:block">
-              <Button
-                size="sm"
-                className="px-4 py-1 text-xs font-semibold tracking-wide rounded-lg bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
-              >
-                Get Offer
-              </Button>
-            </motion.div>
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-accent/10 transition-colors ml-2"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="p-2 rounded-lg hover:bg-accent/10 transition-colors"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
 
         {/* Desktop Layout */}
