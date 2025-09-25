@@ -26,20 +26,74 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6">
-        {/* Centered Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center h-full gap-4 md:gap-10 text-center">
+        {/* Mobile Layout */}
+        <div className="flex md:hidden flex-col items-center justify-center h-full py-2 space-y-3">
+          {/* Logo Row */}
+          <div className="flex items-center justify-between w-full px-2">
+            <div className="w-10"></div> {/* Spacer for symmetry */}
+            <motion.a
+              href="#home"
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center space-x-2 transition-opacity"
+            >
+              <img
+                src={logoImage}
+                alt="Nykson Capital"
+                className="h-10 w-10 object-contain drop-shadow-sm"
+              />
+              <div className="flex flex-col leading-tight">
+                <span className="text-lg font-semibold tracking-wide text-foreground">
+                  Nykson Capital
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  Real Estate Firm
+                </span>
+              </div>
+            </motion.a>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-accent/10 transition-colors"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Mobile CTA Buttons Row */}
+          <div className="flex items-center space-x-3 justify-center w-full px-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="flex items-center gap-1 text-muted-foreground hover:text-primary hover:bg-accent/10 transition-all text-xs px-3 py-1"
+            >
+              <Phone size={14} />
+              Coming Soon
+            </Button>
+            <motion.div whileHover={{ scale: 1.02 }}>
+              <Button
+                size="sm"
+                className="px-4 py-1 text-xs font-semibold tracking-wide rounded-lg bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
+              >
+                Get Cash Offer
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex flex-row items-center justify-center h-full gap-10">
           {/* Logo */}
           <motion.a
             href="#home"
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3 transition-opacity justify-center"
+            className="flex items-center space-x-3 transition-opacity"
           >
             <img
               src={logoImage}
               alt="Nykson Capital"
               className="h-12 w-12 object-contain drop-shadow-sm"
             />
-            <div className="flex flex-col leading-tight text-center">
+            <div className="flex flex-col leading-tight">
               <span className="text-xl font-semibold tracking-wide text-foreground">
                 Nykson Capital
               </span>
@@ -50,7 +104,7 @@ export default function Header() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 justify-center">
+          <nav className="flex items-center space-x-8">
             {NAV_ITEMS.map((item, i) => (
               <motion.a
                 key={item}
@@ -66,8 +120,8 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center space-x-5 justify-center">
+          {/* Desktop CTA Buttons */}
+          <div className="flex items-center space-x-5">
             <Button
               variant="ghost"
               size="sm"
@@ -85,14 +139,6 @@ export default function Header() {
               </Button>
             </motion.div>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-accent/10 transition-colors"
-          >
-            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
-          </button>
         </div>
 
         {/* Mobile Menu */}
@@ -118,7 +164,7 @@ export default function Header() {
                 <div className="pt-5 border-t border-border/40 w-full flex flex-col items-center gap-3">
                   <Button
                     variant="ghost"
-                    size="md"
+                    size="default"
                     className="w-11/12 rounded-xl text-muted-foreground hover:text-primary hover:bg-accent/10 transition-all"
                   >
                     <Phone size={16} />
