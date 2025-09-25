@@ -25,7 +25,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-full">
+        {/* Flex column to center all content */}
+        <div className="flex flex-col items-center justify-center h-full gap-3 md:flex-row md:justify-between">
           {/* Logo */}
           <motion.a
             href="#home"
@@ -37,7 +38,7 @@ const Header = () => {
               alt="Nykson Capital"
               className="h-12 w-12 object-contain drop-shadow-sm"
             />
-            <div className="flex flex-col leading-tight">
+            <div className="flex flex-col leading-tight text-center md:text-left">
               <span className="text-xl font-semibold tracking-wide text-foreground">
                 Nykson Capital
               </span>
@@ -67,7 +68,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-5">
+          <div className="hidden md:flex items-center space-x-5 justify-center">
             <Button
               variant="ghost"
               size="sm"
@@ -105,7 +106,7 @@ const Header = () => {
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="md:hidden mt-2 py-6 border-t border-border/40 bg-background/95 shadow-lg rounded-b-2xl"
             >
-              <nav className="flex flex-col space-y-5 text-lg font-medium">
+              <nav className="flex flex-col space-y-5 text-lg font-medium items-center">
                 {["Home", "About", "Services", "Testimonials", "Contact"].map(
                   (item) => (
                     <a
@@ -117,7 +118,7 @@ const Header = () => {
                     </a>
                   )
                 )}
-                <div className="pt-5 border-t border-border/40">
+                <div className="pt-5 border-t border-border/40 w-full flex justify-center">
                   <Button
                     size="lg"
                     className="w-full rounded-xl bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 transition-all"
