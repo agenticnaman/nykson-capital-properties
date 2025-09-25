@@ -25,8 +25,8 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        {/* Flex column to center all content */}
-        <div className="flex flex-col items-center justify-center h-full gap-3 md:flex-row md:justify-between">
+        {/* Centered row with equal spacing */}
+        <div className="flex items-center justify-center h-full gap-10">
           {/* Logo */}
           <motion.a
             href="#home"
@@ -38,7 +38,7 @@ const Header = () => {
               alt="Nykson Capital"
               className="h-12 w-12 object-contain drop-shadow-sm"
             />
-            <div className="flex flex-col leading-tight text-center md:text-left">
+            <div className="flex flex-col leading-tight text-center">
               <span className="text-xl font-semibold tracking-wide text-foreground">
                 Nykson Capital
               </span>
@@ -67,8 +67,8 @@ const Header = () => {
             )}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-5 justify-center">
+          {/* Desktop CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-5">
             <Button
               variant="ghost"
               size="sm"
